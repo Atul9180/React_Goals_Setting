@@ -8,7 +8,7 @@ const CourseInput = (props) => {
 
   const goalInputChangeHandler = (event) => {
     if (event.target.value.trim().length > 0) {
-      setIsValid("true");
+      setIsValid(true);
     }
     setEnteredValue(event.target.value);
   };
@@ -34,7 +34,7 @@ const CourseInput = (props) => {
           onChange={goalInputChangeHandler}
         />
       </div>
-      <Button type="submit" style={isValid}>
+      <Button type="submit" isValid={isValid}>
         Add Goal
       </Button>
     </form>
