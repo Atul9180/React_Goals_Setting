@@ -1,5 +1,4 @@
 import React from "react";
-// import "./Button.css";
 import styled from "styled-components";
 
 // a tagged template literal with a button element: styled.button``
@@ -32,10 +31,11 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ type, isValid, children }) => {
+const Button = (props) => {
   return (
-    <StyledButton type={type} className={!isValid ? "invalid" : ""}>
-      {children}
+    // {!isValid && "invalid"} similar to{!isValid?"invalid":""}
+    <StyledButton type={props.type} className={!props.isValid && "invalid"}>
+      {props.children}
     </StyledButton>
   );
 };
